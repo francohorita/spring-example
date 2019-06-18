@@ -1,7 +1,6 @@
 package com.solstice.spring.basics.springin10steps;
 
 import com.solstice.spring.basics.springin10steps.basic.BinarySearchImpl;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class SpringIn10StepsBasicApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext applicationContext =	new AnnotationConfigApplicationContext(SpringIn10StepsBasicApplication.class);
+		AnnotationConfigApplicationContext applicationContext =	new AnnotationConfigApplicationContext(SpringIn10StepsBasicApplication.class);
 
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 		System.out.println(binarySearch);
@@ -21,6 +20,8 @@ public class SpringIn10StepsBasicApplication {
 
 		int result = binarySearch.binarySearch(new int[] {12,4,3}, 3);
 		System.out.println(result);
+
+		applicationContext.close();
 	}
 
 }
