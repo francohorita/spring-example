@@ -1,4 +1,4 @@
-package com.solstice.spring.basics.springin10steps;
+package com.solstice.spring.basics.springin10steps.basic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
