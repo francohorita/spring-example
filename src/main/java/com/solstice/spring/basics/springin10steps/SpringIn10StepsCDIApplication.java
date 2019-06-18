@@ -3,17 +3,19 @@ package com.solstice.spring.basics.springin10steps;
 import com.solstice.spring.basics.springin10steps.cdi.SomeCDIBusiness;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan //Adding @ComponentScan since SpringBoot added it by default previously. No args since by default choose current package.
 public class SpringIn10StepsCDIApplication {
 
     private static Logger LOGGER = LoggerFactory.getLogger(SpringIn10StepsCDIApplication.class);
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(SpringIn10StepsBasicApplication.class, args);
+        ConfigurableApplicationContext applicationContext =	new AnnotationConfigApplicationContext(SpringIn10StepsCDIApplication.class);
 
         SomeCDIBusiness someCDIBusiness = applicationContext.getBean(SomeCDIBusiness.class);
 
