@@ -7,3 +7,5 @@ This project is a **Spring Framework** example application coded and tested with
 - External Properties value management.
 - Proxy management.
 - Implementation of the different type of Components Notations.
+- JUnite Tests.
+- Mockito Tests.
